@@ -5,12 +5,13 @@ import (
 
 	internal "github.com/Trashed/go-lcs/internal"
 	"github.com/Trashed/go-lcs/internal/app"
+	"github.com/Trashed/go-lcs/internal/license"
 )
 
 func TestEmptyArgs(t *testing.T) {
 	t.Parallel()
 
-	app := app.New()
+	app := app.New(&license.Loader{})
 	err := app.Args()
 
 	if err == nil {

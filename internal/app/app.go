@@ -4,25 +4,36 @@ import (
 	"io"
 
 	internal "github.com/Trashed/go-lcs/internal"
+	license "github.com/Trashed/go-lcs/internal/license"
 )
 
 type App struct {
+	License *internal.License
+
+	loader *license.Loader
 }
 
-func New() *App {
-	return &App{}
+func New(loader *license.Loader) *App {
+	return &App{
+		loader: loader,
+	}
 }
 
-func (c *App) Args(args ...string) error {
+func (app *App) Args(args ...string) error {
 	if len(args) == 0 {
 		return internal.ErrEmptyArgs
 	}
 
-	// TODO: Parse arguments and prepare the license
+	var err error
+	app.License, err = app.loader.Fetch(args[0], args[1:]...)
+
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
 
-func (c *App) Output(w io.WriteCloser) {
+func (app *App) Output(w io.WriteCloser) {
 
 }
