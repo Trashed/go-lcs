@@ -11,18 +11,18 @@ import (
 //go:embed templates/*
 var embedFS embed.FS
 
-type Loader struct {
+type loader struct {
 	// TODO: Add reference to fs, this also enables better testing
 
 	fs fs.FS
 }
 
-func NewLoader() *Loader {
-	return &Loader{fs: embedFS}
+func NewLoader() *loader {
+	return &loader{fs: embedFS}
 }
 
 // Fetch reads the license template from disk by name. Additional arguments could be used to replace values in the template.
-func (l Loader) Fetch(name string, additionalArgs ...string) (*internal.License, error) {
+func (l loader) Fetch(name string, additionalArgs ...string) (*internal.License, error) {
 
 	f, err := l.fs.Open("templates/" + name + ".lcs")
 	if err != nil {

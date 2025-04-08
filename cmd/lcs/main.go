@@ -9,7 +9,10 @@ import (
 )
 
 func main() {
-	cliApp := app.New(&license.Loader{})
-	log.Fatalln(cliApp.Args(os.Args[1:]...))
+	cliApp := app.New(license.NewLoader())
+	err := cliApp.Args(os.Args[1:]...)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	cliApp.Output(os.Stdout)
 }

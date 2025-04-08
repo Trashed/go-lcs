@@ -2,24 +2,31 @@ package app
 
 import (
 	"io"
+	"log"
 
 	internal "github.com/Trashed/go-lcs/internal"
-	license "github.com/Trashed/go-lcs/internal/license"
 )
 
 type App struct {
 	License *internal.License
 
-	loader *license.Loader
+	loader LicenseFetcher
 }
 
-func New(loader *license.Loader) *App {
+type LicenseFetcher interface {
+	Fetch(name string, additionalArgs ...string) (*internal.License, error)
+}
+
+func New(loader LicenseFetcher) *App {
 	return &App{
 		loader: loader,
 	}
 }
 
 func (app *App) Args(args ...string) error {
+
+	log.Printf("args: %+v\n", args)
+
 	if len(args) == 0 {
 		return internal.ErrEmptyArgs
 	}
@@ -34,6 +41,13 @@ func (app *App) Args(args ...string) error {
 	return nil
 }
 
-func (app *App) Output(w io.WriteCloser) {
+func (app *App) Output(w io.WriteCloser) error {
+	defer w.Close()
 
+	_, err := w.Write(app.License.Content)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
