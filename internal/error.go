@@ -1,4 +1,4 @@
-package golcs
+package internal
 
 import "errors"
 
