@@ -1,18 +1,28 @@
 package app
 
-import "io"
+import (
+	"io"
 
-type cliApp struct {
+	internal "github.com/Trashed/go-lcs/internal"
+)
+
+type App struct {
 }
 
-func New() *cliApp {
-	return &cliApp{}
+func New() *App {
+	return &App{}
 }
 
-func (c *cliApp) Args(args ...string) {
+func (c *App) Args(args ...string) error {
+	if len(args) == 0 {
+		return internal.ErrEmptyArgs
+	}
 
+	// TODO: Parse arguments and prepare the license
+
+	return nil
 }
 
-func (c *cliApp) Output(w io.WriteCloser) {
+func (c *App) Output(w io.WriteCloser) {
 
 }
