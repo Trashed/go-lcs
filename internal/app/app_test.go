@@ -11,7 +11,7 @@ import (
 func TestEmptyArgs(t *testing.T) {
 	t.Parallel()
 
-	app := app.New(&license.Loader{})
+	app := app.New(license.NewLoader())
 	err := app.Args()
 
 	if err == nil {
