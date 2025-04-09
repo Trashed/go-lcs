@@ -14,4 +14,16 @@ The `lcs` command-line application can be installed with the following command:
 
 On Linux, one could create a MIT license in the current directory by simply calling:
 
+`lcs [argument] > LICENSE`
+
+for example:
+
 `lcs mit > LICENSE`
+
+## Available licenses
+
+| License                 | Argument        |
+| ------------------------| ----------------|
+| MIT                     | mit             |
+| Mozilla Public License  | mozilla-public  |
+
