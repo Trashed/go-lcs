@@ -1,6 +1,4 @@
-<div style="float: left; width: 140px; margin: 0 10px 10px 0;">
-  <img src="lcs_logo.png" alt="Logo" width="140">
-</div>
+<img src="docs/attachments/lcs_banner.svg" alt="go-lcs banner Logo">
 
 # go-lcs
 
