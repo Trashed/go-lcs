@@ -5,7 +5,7 @@ import (
 	"io"
 	"io/fs"
 
-	"github.com/Trashed/go-lcs/internal"
+	golcs "github.com/Trashed/go-lcs"
 )
 
 //go:embed templates/*
@@ -22,7 +22,7 @@ func NewLoader() *loader {
 }
 
 // Fetch reads the license template from disk by name. Additional arguments could be used to replace values in the template.
-func (l loader) Fetch(name string, additionalArgs ...string) (*internal.License, error) {
+func (l loader) Fetch(name string, additionalArgs ...string) (*golcs.License, error) {
 
 	f, err := l.fs.Open("templates/" + name + ".lcs")
 	if err != nil {
@@ -36,7 +36,7 @@ func (l loader) Fetch(name string, additionalArgs ...string) (*internal.License,
 		return nil, err
 	}
 
-	license := internal.License{
+	license := golcs.License{
 		Name:    name,
 		Content: content,
 	}

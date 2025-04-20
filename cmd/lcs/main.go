@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/Trashed/go-lcs/internal/app"
-	"github.com/Trashed/go-lcs/internal/license"
+	"github.com/Trashed/go-lcs/license"
 )
 
 func main() {

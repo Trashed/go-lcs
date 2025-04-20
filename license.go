@@ -1,4 +1,4 @@
-package internal
+package golcs
 
 type License struct {
 	Name    string

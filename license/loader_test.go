@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Trashed/go-lcs/internal/license"
+	"github.com/Trashed/go-lcs/license"
 )
 
 func TestFetch(t *testing.T) {
