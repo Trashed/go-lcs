@@ -1,4 +1,4 @@
-<img src="docs/attachments/lcs_banner.svg" alt="go-lcs banner Logo">
+<img src="docs/attachments/lcs_banner.png" alt="go-lcs banner Logo">
 
 # go-lcs
 
