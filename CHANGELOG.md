@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.2.0] - 2025-04-20
+
+### Added
+
+- Added logo banner (issue #12)
+
 ## [0.1.0] - 2025-04-08
 
 ### Added
