@@ -1,4 +1,4 @@
-<img align="left" src="docs/attachments/lcs_logo.png" />
+<img align="left" width="120px" src="docs/attachments/lcs_logo.png" />
 
 # go-lcs
 
