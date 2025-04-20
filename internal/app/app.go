@@ -4,17 +4,17 @@ import (
 	"io"
 	"log"
 
-	internal "github.com/Trashed/go-lcs/internal"
+	golcs "github.com/Trashed/go-lcs"
 )
 
 type App struct {
-	License *internal.License
+	License *golcs.License
 
 	loader LicenseFetcher
 }
 
 type LicenseFetcher interface {
-	Fetch(name string, additionalArgs ...string) (*internal.License, error)
+	Fetch(name string, additionalArgs ...string) (*golcs.License, error)
 }
 
 func New(loader LicenseFetcher) *App {
@@ -28,7 +28,7 @@ func (app *App) Args(args ...string) error {
 	log.Printf("args: %+v\n", args)
 
 	if len(args) == 0 {
-		return internal.ErrEmptyArgs
+		return golcs.ErrEmptyArgs
 	}
 
 	var err error

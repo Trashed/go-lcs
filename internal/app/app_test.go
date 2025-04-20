@@ -3,9 +3,9 @@ package app_test
 import (
 	"testing"
 
-	internal "github.com/Trashed/go-lcs/internal"
+	golcs "github.com/Trashed/go-lcs"
 	"github.com/Trashed/go-lcs/internal/app"
-	"github.com/Trashed/go-lcs/internal/license"
+	"github.com/Trashed/go-lcs/license"
 )
 
 func TestEmptyArgs(t *testing.T) {
@@ -15,6 +15,6 @@ func TestEmptyArgs(t *testing.T) {
 	err := app.Args()
 
 	if err == nil {
-		t.Fatalf("expected err \"%v\", got nil instead", internal.ErrEmptyArgs)
+		t.Fatalf("expected err \"%v\", got nil instead", golcs.ErrEmptyArgs)
 	}
 }
