@@ -1,4 +1,6 @@
-<img style="float:left; padding:0 20px 20px 0;" width="120px" src="docs/attachments/lcs_logo.png" />
+<div style="float: left; width: 140px; margin: 0 10px 10px 0;">
+  <img src="lcs_logo.png" alt="Logo" width="140">
+</div>
 
 # go-lcs
 
