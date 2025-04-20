@@ -1,3 +1,5 @@
+<img src="docs/attachments/lcs_banner.png" alt="go-lcs banner Logo">
+
 # go-lcs
 
 go-lcs is a command-line tool for adding a LICENSE file where one might want it.
