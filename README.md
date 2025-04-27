@@ -28,4 +28,4 @@ for example:
 | ------------------------| ----------------|
 | MIT                     | mit             |
 | Mozilla Public License  | mozilla-public  |
-
+| GNU GPL v3              | gplv3           |
